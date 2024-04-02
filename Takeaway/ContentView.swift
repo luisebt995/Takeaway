@@ -12,10 +12,21 @@ struct ContentView: View {
         NavigationView{
             List{
                 //Text("Comida 1")
-                VistaTipoComida(imageName: "asiatica", foodName: "Asiatica")
-                VistaTipoComida(imageName: "arabe", foodName: "Arabe")
-                VistaTipoComida(imageName: "indu", foodName: "Indu")
-                VistaTipoComida(imageName: "mediterranea", foodName: "Mediterranea")
+                NavigationLink(destination: OrderView(cuisineType: .asiatica)){
+                    VistaTipoComida(imageName: "asiatica", foodName: "Asiatica")
+                }
+                NavigationLink(destination: OrderView(cuisineType: .arabe)){
+                    VistaTipoComida(imageName: "arabe", foodName: "Arabe")
+                }
+                NavigationLink(destination: OrderView(cuisineType: .hindu)){
+                    VistaTipoComida(imageName: "indu", foodName: "Hindu")
+                }
+                NavigationLink(destination: OrderView(cuisineType: .mediterranea)){
+                    VistaTipoComida(imageName: "mediterranea", foodName: "Mediterranea")
+                }
+                /*VistaTipoComida(imageName: "arabe", foodName: "Arabe")
+                VistaTipoComida(imageName: "indu", foodName: "Hindu")
+                VistaTipoComida(imageName: "mediterranea", foodName: "Mediterranea")*/
             }.navigationTitle("Haga su pedido: ")
         }
     }
